@@ -59,6 +59,96 @@ fun main() {
     println(Suma.pi)
     println(Suma.elevarAlCuadrado(2))
     println(Suma.historialSumas)
+
+
+    //-----Clase 14-11-2024
+
+    //Arreglos
+    //Estaticos
+    val arregloEstatico: Array<Int> = arrayOf<Int>(1,2,3)
+    println(arregloEstatico);
+
+    // Dinamicos
+    val arregloDinamico: ArrayList<Int> = arrayListOf<Int>(
+        1,2,3,4,5,6,7,8,9,10
+    )
+
+    println(arregloDinamico)
+    arregloDinamico.add(11)
+    arregloDinamico.add(12)
+    println(arregloDinamico)
+
+
+    // For each = > Unit
+    // Iterar un arreglo
+    val respuestaForEach: Unit = arregloDinamico
+        .forEach { valorActual: Int ->
+            println("valorActual: $valorActual");
+        }
+
+    // "it" (en ingles "eso") significa el elemento iterado
+    arregloDinamico.forEach { println( "Valor Actual (it): ${it}")}
+
+    // Map -> Muta (Modifica cambio) el arreglo
+    // 1. enviamos el nuevo valor a la iteracion
+    // 2. nos devuelve un nuevo Arreglo con valores
+    // de las iteracionnes
+    val respuestaMap:List<Double> = arregloDinamico
+        .map {valorActual: Int ->
+            return@map valorActual.toDouble() + 100.00
+        }
+    println("Map 1 " + respuestaMap)
+
+    val respuestaMapDos = arregloDinamico.map { it + 15 }
+    println("Map 2: " + respuestaMapDos)
+
+
+    // Filter -> filtara el arreglo
+    // 1. Devolver una expresion true o false
+    // 2. nuevo arreglo filtrado
+    val respuestaFilter: List<Int> = arregloDinamico
+        .filter { valorActual: Int ->
+            //expresion o condicion
+            val mayoresACinco: Boolean = valorActual > 5
+            return@filter mayoresACinco
+        }
+
+    val respuestaFilterDos = arregloDinamico.filter{ it <= 5}
+    println("FILTER: "+respuestaFilter)
+    println(respuestaFilterDos)
+
+    // OP AND
+    // AND → &&? (¿MISMO NOMBRE?)
+
+    val respuestaAny: Boolean = arregloDinamico
+        .any { valorActual: Int ->
+            return@any (valorActual > 5)
+        }
+
+    println("ANY: " + respuestaAny)
+
+    // AND → ALL (TODOS JUNTOS?)
+    println(respuestaAny) // true
+    val respuestaAll: Boolean = arregloDinamico
+        .all { valorActual: Int ->
+            return@all (valorActual > 5)
+        }
+    println("ALL: "+respuestaAll) // false
+
+    // REDUCE → Valor acumulado
+    // Valor acumulado = 0 (Siempre empiezo en 0 en Kotlin)
+    // [1,2,3,4,5] → Acumular "SUMAR" estos valores del arreglo
+    // valorIteracion1 = valorEmpieza  + 1 = 0 + 1 = 1 → Iteracion1
+    // valorIteracion2 = valorAcumuladoIteracion1 + 2 = 1 + 2 = 3 → Iteracion2
+    // valorIteracion3 = valorAcumuladoIteracion2 + 3 = 3 + 3 = 6 → Iteracion3
+    // valorIteracion4 = valorAcumuladoIteracion3 + 4 = 6 + 4 = 10 → Iteracion4
+    // valorIteracion5 = valorAcumuladoIteracion4 + 5 = 10 + 5 = 15 → Iteracion4
+    val respuestaReduce: Int = arregloDinamico
+        .reduce{ acumulado:Int, valorActual:Int ->
+            return@reduce (acumulado + valorActual) // → Cambiar o usar la logica de negocio
+        }
+    println(respuestaReduce);
+    // return@reduce acumulado + (itemCarrito.cantidad * itemCarrito.precio)
 }
 
 //-------------FUNCIONES----------
