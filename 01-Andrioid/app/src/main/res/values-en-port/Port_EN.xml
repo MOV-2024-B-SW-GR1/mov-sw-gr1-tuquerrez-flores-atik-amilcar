@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contenido">You can do it</string>
+    <color name="contenido_color">#D6AB29</color>
+    <color name="fondo_color">#4CAF50</color>
+</resources>

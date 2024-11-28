@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contenido">App Móviles</string>
+    <color name="contenido_color">#00BCD4</color>
+    <color name="fondo_color">#3F51B5</color>
+</resources>

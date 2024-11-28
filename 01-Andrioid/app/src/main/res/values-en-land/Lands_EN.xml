@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="contenido">Risk</string>
+    <color name="contenido_color">#ffffff</color>
+    <color name="fondo_color">#A0231A</color>
+</resources>
