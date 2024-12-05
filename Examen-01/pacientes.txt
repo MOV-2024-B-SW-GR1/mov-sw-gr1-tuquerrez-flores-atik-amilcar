@@ -1,0 +1,2 @@
+Atik,1,21,MAsculino,false|1,2024-12-10,Odontologia,56.0,Narvaez
+Amilcar,2,21,Masculino,true|
