@@ -106,7 +106,7 @@ fun main() {
 
             3 -> {
                 println("\n--- Agregar Cita Médica ---")
-                val idPaciente = leerEntero("🆔 ID del Paciente: ")
+                val idPaciente = leerEntero(" ID del Paciente: ")
                 val paciente = pacienteService.leerPacientes().find { it.id == idPaciente }
                 if (paciente == null) {
                     println(" Paciente con ID '$idPaciente' no encontrado.")
@@ -174,7 +174,7 @@ fun main() {
 
             6 -> {
                 println("\n--- Eliminar Paciente ---")
-                val idPaciente = leerEntero("🆔 ID del Paciente a eliminar: ")
+                val idPaciente = leerEntero(" ID del Paciente a eliminar: ")
                 if (pacienteService.leerPacientes().none { it.id == idPaciente }) {
                     println(" Paciente con ID '$idPaciente' no encontrado.")
                 } else {
