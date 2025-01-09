@@ -40,4 +40,6 @@ class BListView : AppCompatActivity() {
         arreglo.add(BEntrenador(4, "Carlos","d@d.com"))
         adaptador.notifyDataSetChanged()
     }
+
+    
 }

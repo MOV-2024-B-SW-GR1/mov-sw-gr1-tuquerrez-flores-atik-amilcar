@@ -5,41 +5,44 @@
     android:id="@+id/main_ciclo_vida"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fondo_color"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/fondo_color"
-        android:text="@string/contenido"
-        android:textColor="@color/contenido_color"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:background="@color/design_default_color_background"
+    tools:context=".MainActivity"
+    tools:visibility="visible">
 
     <Button
         android:id="@+id/cl_ciclo_vida"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:text="Ciclo Vida"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintStart_toStartOf="@+id/textView" />
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="316dp" />
 
     <Button
         android:id="@+id/btn_ir_list_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
         android:text="Lista View"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintHorizontal_bias="0.588"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        tools:layout_editor_absoluteX="152dp"
+        tools:layout_editor_absoluteY="401dp" />
+
+    <Button
+        android:id="@+id/btn_ir_intent_implicito"
+        android:layout_width="112dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="44dp"
+        android:text="Implicito"
+        app:layout_constraintBottom_toTopOf="@+id/btn_ir_intent_explicito"
+        tools:layout_editor_absoluteX="152dp" />
+
+    <Button
+        android:id="@+id/btn_ir_intent_explicito"
+        android:layout_width="112dp"
+        android:layout_height="46dp"
+        android:layout_marginBottom="32dp"
+        android:text="Explicito"
+        app:layout_constraintBottom_toTopOf="@+id/cl_ciclo_vida"
+        app:layout_constraintEnd_toEndOf="@+id/cl_ciclo_vida"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/cl_ciclo_vida" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
