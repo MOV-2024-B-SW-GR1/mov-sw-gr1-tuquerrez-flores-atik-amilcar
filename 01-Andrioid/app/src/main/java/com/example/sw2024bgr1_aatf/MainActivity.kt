@@ -57,6 +57,12 @@ class MainActivity : AppCompatActivity() {
                 intentExplicito.putExtra("edad", "21")
                 callbackContenidoIntentExplicito.launch(intentExplicito)
             }
+
+        val botonIrSqlite = findViewById<Button>(R.id.btn_sqlite)
+        botonIrSqlite
+            .setOnClickListener {
+                irActividad(ECrudEntrenador::class.java)
+            }
     }
 
     fun irActividad(clase:Class<*>){

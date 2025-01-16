@@ -14,35 +14,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Ciclo Vida"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="316dp" />
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="393dp" />
 
     <Button
         android:id="@+id/btn_ir_list_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Lista View"
-        tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="401dp" />
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="478dp" />
 
     <Button
         android:id="@+id/btn_ir_intent_implicito"
         android:layout_width="112dp"
         android:layout_height="50dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginBottom="56dp"
         android:text="Implicito"
         app:layout_constraintBottom_toTopOf="@+id/btn_ir_intent_explicito"
-        tools:layout_editor_absoluteX="152dp" />
+        tools:layout_editor_absoluteX="34dp" />
 
     <Button
         android:id="@+id/btn_ir_intent_explicito"
         android:layout_width="112dp"
         android:layout_height="46dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="20dp"
         android:text="Explicito"
         app:layout_constraintBottom_toTopOf="@+id/cl_ciclo_vida"
         app:layout_constraintEnd_toEndOf="@+id/cl_ciclo_vida"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cl_ciclo_vida" />
+
+    <Button
+        android:id="@+id/btn_sqlite"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sqlite"
+        app:layout_constraintBottom_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="@+id/textView"
+        tools:layout_editor_absoluteX="279dp" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOLA"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
