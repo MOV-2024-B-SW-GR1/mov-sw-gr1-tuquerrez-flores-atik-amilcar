@@ -4,4 +4,7 @@
         <item>Martes</item>
         <item>Miercoles</item>
     </string-array>
+
+    <string name="saludo">Hello Friends</string>
+    <color name="saludo_color">#B4700B</color>
 </resources>
