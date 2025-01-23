@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "387724695128",
+    "project_id": "consultorio-aatf",
+    "storage_bucket": "consultorio-aatf.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387724695128:android:08f2cdbc36597cddcadc2d",
+        "android_client_info": {
+          "package_name": "com.example.consultorioaatf"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvDm2yoouufykQe0KS05YCSak-aENzprQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

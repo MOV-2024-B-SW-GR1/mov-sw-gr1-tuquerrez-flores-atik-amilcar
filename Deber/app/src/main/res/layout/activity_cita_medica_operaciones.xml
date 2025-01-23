@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_operaciones_citaMedica"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/text_numero_citaMedica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:ems="10"
+        android:hint="Numero de Paciente(ID)"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/text_medico_citaMedica"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_medico_citaMedica"
+        app:layout_constraintTop_toBottomOf="@+id/text_medico_citaMedica" />
+
+    <EditText
+        android:id="@+id/text_medico_citaMedica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:ems="10"
+        android:hint="Médico"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/text_costo_citaMedica"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_costo_citaMedica"
+        app:layout_constraintTop_toBottomOf="@+id/text_costo_citaMedica" />
+
+    <EditText
+        android:id="@+id/text_motivo_citaMedica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Motivo"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/text_fecha_citaMedica"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_fecha_citaMedica"
+        app:layout_constraintTop_toBottomOf="@+id/text_fecha_citaMedica" />
+
+    <EditText
+        android:id="@+id/text_costo_citaMedica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:hint="Costo"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="@+id/text_motivo_citaMedica"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_motivo_citaMedica"
+        app:layout_constraintTop_toBottomOf="@+id/text_motivo_citaMedica" />
+
+    <EditText
+        android:id="@+id/text_fecha_citaMedica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="88dp"
+        android:ems="10"
+        android:hint="2000-01-01"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_guardar_citaMedica"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Guardar"
+        app:layout_constraintEnd_toEndOf="@+id/text_numero_citaMedica"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/text_numero_citaMedica"
+        app:layout_constraintTop_toBottomOf="@+id/text_numero_citaMedica" />
+</androidx.constraintlayout.widget.ConstraintLayout>
