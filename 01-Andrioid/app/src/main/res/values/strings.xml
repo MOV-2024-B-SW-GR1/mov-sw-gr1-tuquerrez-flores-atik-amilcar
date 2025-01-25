@@ -7,4 +7,5 @@
 
     <string name="saludo">Hello Friends</string>
     <color name="saludo_color">#B4700B</color>
+    <string name="title_activity_ggoogle_maps_placeholder">GGoogleMapsPlaceholder</string>
 </resources>
