@@ -89,6 +89,11 @@ class listPacientes : AppCompatActivity() {
                 irActividad(listCitaMedica::class.java, pacienteSeleccionado)
                 return true
             }
+            R.id.route_mapa -> {
+                val pacienteSeleccionado = listaPacientes[posicionItemSeleccionado]
+                irActividad(GgoogleMaps::class.java, pacienteSeleccionado)
+                return true
+            }
             else -> super.onContextItemSelected(item)
         }
     }

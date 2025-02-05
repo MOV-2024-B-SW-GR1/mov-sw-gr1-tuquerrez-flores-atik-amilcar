@@ -30,6 +30,8 @@ class PacienteOperaciones : AppCompatActivity() {
         val inputEdad = findViewById<EditText>(R.id.text_edad_paciente)
         val inputGenero = findViewById<EditText>(R.id.text_genero_paciente)
         val inputTelefono = findViewById<EditText>(R.id.text_telefono_paciente)
+        val inputLatitud = findViewById<EditText>(R.id.txt_latitud_paciente)
+        val inputLongitud = findViewById<EditText>(R.id.txt_longitud_paciente)
 
         if (modo == "editar" && paciente != null) {
             try {
@@ -37,6 +39,8 @@ class PacienteOperaciones : AppCompatActivity() {
                 inputEdad.setText(paciente.edad.toString())
                 inputGenero.setText(paciente.genero)
                 inputTelefono.setText(paciente.telefono)
+                inputLatitud.setText(paciente.latitude.toString())
+                inputLongitud.setText(paciente.longitude.toString())
             } catch (e: Exception) {
                 e.printStackTrace()
                 mostrarSnackbar("Error al cargar los datos del paciente.")
@@ -51,9 +55,18 @@ class PacienteOperaciones : AppCompatActivity() {
             val edad = inputEdad.text.toString().toInt()
             val genero = inputGenero.text.toString().trim()
             val telefono = inputTelefono.text.toString().trim()
+            val latitudeString = inputLatitud.text.toString().trim()
+            val longitudeString = inputLongitud.text.toString().trim()
 
             if (nombre.isEmpty() || genero.isEmpty() || telefono.isEmpty()) {
                 mostrarSnackbar("Por favor, llene todos los campos.")
+                return@setOnClickListener
+            }
+
+            val latitude = latitudeString.toDoubleOrNull()
+            val longitude = longitudeString.toDoubleOrNull()
+            if(latitude == null || longitude == null){
+                mostrarSnackbar("Por favor, ingresa valores válidos para la latitud y longitud.")
                 return@setOnClickListener
             }
 
@@ -62,7 +75,9 @@ class PacienteOperaciones : AppCompatActivity() {
                     nombre,
                     edad,
                     genero,
-                    telefono
+                    telefono,
+                    latitude,
+                    longitude
                 )
 
                 if (respuesta == true) {
@@ -78,7 +93,9 @@ class PacienteOperaciones : AppCompatActivity() {
                     nombre,
                     edad,
                     genero,
-                    telefono
+                    telefono,
+                    latitude,
+                    longitude
                 )
 
                 if (respuesta == true) {

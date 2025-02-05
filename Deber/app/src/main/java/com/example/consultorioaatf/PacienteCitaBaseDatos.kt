@@ -4,12 +4,7 @@ import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import java.time.LocalDate
-import java.time.ZoneId
-import java.time.format.DateTimeFormatter
-import java.util.*
-import java.sql.Date
-import java.text.SimpleDateFormat
+
 
 class PacienteCitaBaseDatos(
     context: Context?
@@ -27,7 +22,9 @@ class PacienteCitaBaseDatos(
                     nombre VARCHAR(50),
                     edad INTEGER,
                     genero VARCHAR(10),
-                    telefono VARCHAR(10)
+                    telefono VARCHAR(10),
+                    latitude REAL,
+                    longitude REAL
                 )
             """.trimIndent()
         db?.execSQL(scriptSQLCrearTablaPaciente)
@@ -51,7 +48,7 @@ class PacienteCitaBaseDatos(
     override fun onUpgrade(p0: SQLiteDatabase?, p1: Int, p2: Int) {}
 
     fun obtenerTodosLosPacientes(): List<Paciente> {
-        val listaPacientes = mutableListOf<Paciente>()
+        val listaPacientes: MutableList<Paciente> = ArrayList()
         val baseDatosLectura = readableDatabase
         val scriptConsultaLectura = "SELECT * FROM PACIENTE"
         val resultadoConsultaLectura = baseDatosLectura.rawQuery(scriptConsultaLectura, null)
@@ -63,8 +60,9 @@ class PacienteCitaBaseDatos(
                 val edad = resultadoConsultaLectura.getInt(2)
                 val genero = resultadoConsultaLectura.getString(3)
                 val telefono = resultadoConsultaLectura.getString(4)
-
-                val paciente = Paciente(id, nombre, edad, genero, telefono)
+                val latitude = resultadoConsultaLectura.getDouble(5)
+                val longitude = resultadoConsultaLectura.getDouble(6)
+                val paciente = Paciente(id, nombre, edad, genero, telefono, latitude, longitude)
                 listaPacientes.add(paciente)
             } while (resultadoConsultaLectura.moveToNext())
         }
@@ -73,13 +71,22 @@ class PacienteCitaBaseDatos(
         return listaPacientes
     }
 
-    fun crearPaciente(nombre: String, edad: Int, genero: String, telefono: String): Boolean {
+    fun crearPaciente(
+        nombre: String?,
+        edad: Int,
+        genero: String?,
+        telefono: String?,
+        latitude: Double,
+        longitude: Double
+    ): Boolean {
         val baseDatosEscritura = writableDatabase
         val valoresGuardar = ContentValues()
         valoresGuardar.put("nombre", nombre)
         valoresGuardar.put("edad", edad)
         valoresGuardar.put("genero", genero)
         valoresGuardar.put("telefono", telefono)
+        valoresGuardar.put("latitude", latitude)
+        valoresGuardar.put("longitude", longitude)
         val resultadoGuardar = baseDatosEscritura.insert("PACIENTE", null, valoresGuardar)
         baseDatosEscritura.close()
         return resultadoGuardar != -1L
@@ -93,15 +100,30 @@ class PacienteCitaBaseDatos(
         return resultadoEliminar != -1
     }
 
-    fun actualizarPaciente(id: Int, nombre: String, edad: Int, genero: String, telefono: String): Boolean {
+    fun actualizarPaciente(
+        id: Int,
+        nombre: String?,
+        edad: Int,
+        genero: String?,
+        telefono: String?,
+        latitude: Double,
+        longitude: Double
+    ): Boolean {
         val baseDatosEscritura = writableDatabase
         val valoresAActualizar = ContentValues()
         valoresAActualizar.put("nombre", nombre)
         valoresAActualizar.put("edad", edad)
         valoresAActualizar.put("genero", genero)
         valoresAActualizar.put("telefono", telefono)
+        valoresAActualizar.put("latitude", latitude)
+        valoresAActualizar.put("longitude", longitude)
         val parametrosConsultaActualizar = arrayOf(id.toString())
-        val resultadoActualizar = baseDatosEscritura.update("PACIENTE", valoresAActualizar, "id=?", parametrosConsultaActualizar)
+        val resultadoActualizar = baseDatosEscritura.update(
+            "PACIENTE",
+            valoresAActualizar,
+            "id=?",
+            parametrosConsultaActualizar
+        )
         baseDatosEscritura.close()
         return resultadoActualizar != -1
     }

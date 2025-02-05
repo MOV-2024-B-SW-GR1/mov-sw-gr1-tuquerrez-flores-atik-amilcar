@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.snackbar.Snackbar
-import java.util.Date
 
 class citaMedicaOperaciones : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">consultorio.aatf</string>
+    <string name="title_activity_ggoogle_maps">GgoogleMaps</string>
+    <string name="title_activity_ggoogle_maps_placecholder">GGoogleMapsPlacecholder</string>
 </resources>

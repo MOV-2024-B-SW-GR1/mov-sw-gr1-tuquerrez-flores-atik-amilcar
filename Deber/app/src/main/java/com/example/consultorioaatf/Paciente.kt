@@ -8,18 +8,26 @@ class Paciente(
     val nombre: String,
     var edad: Int,
     var genero: String,
-    var telefono: String
+    var telefono: String,
+    val latitude: Double,
+    val longitude: Double
 ) : Parcelable {
+    val latitud: Double
+        get() = latitude
+    val longitud: Double
+        get() = longitude
     constructor(parcel: Parcel) : this(
         parcel.readInt(),
         parcel.readString()!!,
         parcel.readInt(),
         parcel.readString()!!,
-        parcel.readString()!!
+        parcel.readString()!!,
+        parcel.readDouble(),
+        parcel.readDouble()
     )
 
     override fun toString(): String {
-        return "$nombre ($edad años, $genero, lugar: $telefono)"
+        return "$nombre ($edad años, $genero, lugar: $telefono , latitud: $latitude, longitud: $longitude)"
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -28,6 +36,8 @@ class Paciente(
         parcel.writeInt(edad)
         parcel.writeString(genero)
         parcel.writeString(telefono)
+        parcel.writeDouble(latitude)
+        parcel.writeDouble(longitude)
     }
 
     override fun describeContents(): Int {
